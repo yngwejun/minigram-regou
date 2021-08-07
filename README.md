@@ -178,3 +178,55 @@ https://mp.weixin.qq.com/
 此时底部效果就出来了
 
 ![底部效果](./img/bottom-xiaoguo.jpg)
+
+## 搜索框
+
+在components目录下右键，选择新建components，名为SearchInput。
+在SearchInputwxml中：
+```html
+<view class="search_input">
+  <navigator url="/pages/search/index" open-type="navigate">搜索</navigator>
+</view>
+```
+
+在index中引入，`index.json`:
+```json
+"usingComponents": {
+    "SearchInput": "../../components/SearchInput/SearchInput"
+  },
+  ```
+
+  我们用vscode编写代码，用微信开发者工具预览，在vscode中下载插件，小程序开发助手和 Easy WXLESS，点击设置打开，右上角的json设置
+  ![json-settings](./img/json-settings.jpg)
+  添加配置：保存less会在当前目录生成一个对应的wxml
+```json
+"less.compile": {
+    "outExt": ".wxss"
+}
+```
+ 在SearchInput.json中添加搜索框样式
+  ```css
+  .search_input {
+  height: 90rpx;
+  padding: 10rpx;
+  background-color: var(--themeColor);
+  navigator {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #fff;
+    border-radius: 15rpx;
+  }
+}
+```
+
+在主页面index.wxml中使用搜索框组件
+```html
+<!--index.wxml-->
+<view class="rg_index">
+  <!-- 搜索框 -->
+  <SearchInput></SearchInput>
+</view>
+```
+效果：点击搜索框会跳转到搜索页
+![搜索框效果](./img/search.jpg)

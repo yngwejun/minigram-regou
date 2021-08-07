@@ -1,2 +1,15 @@
 /**app.wxss**/
 @import "./styles/icfont.wxss";
+/* 微信小程序不支持 通配符 * */
+page,view,text,swiper,swiper-item,image,navigator {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+/* 微信小程序样式支持变量 */
+page {
+  /* 定义主题颜色 */
+  --themeColor: #eb4450;
+  /* 定义统一的字体大小 假设设计稿的大小是375px 1px = 2rpx 14px = 28rpx */
+  font-size: 28rpx;
+}
