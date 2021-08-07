@@ -204,7 +204,7 @@ https://mp.weixin.qq.com/
     "outExt": ".wxss"
 }
 ```
- 在SearchInput.json中添加搜索框样式
+ 在SearchInput.less中添加搜索框样式,ctr+s保存
   ```css
   .search_input {
   height: 90rpx;
